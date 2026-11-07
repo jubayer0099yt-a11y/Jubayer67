@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SOCIAL_LINKS } from '../data/portfolioData';
 import { Copy, Check, ExternalLink, MessageSquare, Youtube, Github, Twitter, Mail, Users } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 export function SocialsSection() {
   const [copiedHandle, setCopiedHandle] = useState<string | null>(null);
@@ -112,10 +113,11 @@ export function SocialsSection() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   {link.avatar ? (
-                    <img
+                    <SafeImage
                       src={link.avatar}
                       alt={link.label}
                       className="w-10 h-10 rounded-full border border-red-500/60 object-cover shadow-sm"
+                      fallbackType="avatar"
                     />
                   ) : (
                     <div className="p-2.5 rounded-xl bg-neutral-800 text-neutral-200">

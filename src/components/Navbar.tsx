@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 interface NavbarProps {
   activeSection: string;
@@ -31,10 +32,11 @@ export function Navbar({ activeSection, onNavigate, onOpenOrderModal }: NavbarPr
           onClick={() => handleLinkClick('hero')}
           className="flex items-center gap-2.5 text-left cursor-pointer group shrink-0"
         >
-          <img
+          <SafeImage
             src="/assets/aistudio/39727-removebg-preview_bf8db067.png"
             alt="JUBAYER"
             className="w-8 h-8 rounded-full border border-neutral-700 object-cover shrink-0 group-hover:border-emerald-400 transition-colors"
+            fallbackType="avatar"
           />
           <span className="text-xl font-bold tracking-tight text-white group-hover:text-emerald-400 transition-colors whitespace-nowrap font-display">
             JUBAYER

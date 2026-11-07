@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SERVICES_DATA, ServiceItem } from '../data/portfolioData';
 import { ArrowRight, Server, Globe, Bot, Code2, Check, ExternalLink } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 interface SkillsSectionProps {
   onSelectPricingTab: (tabKey: 'mc' | 'website' | 'dc' | 'promote') => void;
@@ -73,13 +74,21 @@ export function SkillsSection({ onSelectPricingTab, onOpenOrderModal }: SkillsSe
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Visual Preview Side */}
             <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto min-h-[300px] lg:min-h-[460px] bg-neutral-950 overflow-hidden group">
-              <img
+              <SafeImage
                 src={selectedSkill.image}
                 alt={selectedSkill.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                referrerPolicy="no-referrer"
+                fallbackType={
+                  selectedSkill.id === 'server-dev'
+                    ? 'server'
+                    : selectedSkill.id === 'custom-websites'
+                    ? 'website'
+                    : selectedSkill.id === 'discord-systems'
+                    ? 'discord'
+                    : 'workstation'
+                }
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-neutral-950/90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-neutral-950/90 pointer-events-none" />
 
               <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-neutral-800/80">
                 <div className="grid grid-cols-3 gap-2 text-center">

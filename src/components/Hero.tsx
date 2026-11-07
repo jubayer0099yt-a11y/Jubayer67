@@ -1,4 +1,5 @@
 import { ArrowRight, Calculator, CheckCircle2 } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 interface HeroProps {
   onExploreSkills: () => void;
@@ -19,10 +20,11 @@ export function Hero({ onExploreSkills, onOpenCalculator }: HeroProps) {
             {/* Creator Profile Header */}
             <div className="flex items-center gap-4 p-3 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 w-fit">
               <div className="relative shrink-0">
-                <img
+                <SafeImage
                   src="/assets/aistudio/39727-removebg-preview_bf8db067.png"
                   alt="JUBAYER Avatar"
                   className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-emerald-400 shadow-md shadow-emerald-500/20 object-cover"
+                  fallbackType="avatar"
                 />
                 <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-neutral-950" />
               </div>
@@ -94,13 +96,14 @@ export function Hero({ onExploreSkills, onOpenCalculator }: HeroProps) {
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl border border-neutral-800 bg-neutral-900/80 p-2 shadow-2xl overflow-hidden group">
               <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] rounded-xl overflow-hidden bg-neutral-950">
-                <img
-                  src="/src/assets/images/prorabbi_hero_visual_1794026322278.jpg"
+                <SafeImage
+                  src="/assets/images/hero-workstation.jpg"
                   alt="JUBAYER Developer Workstation and Server Terminal"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
+                  fallbackType="workstation"
+                  aspectClassName="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent pointer-events-none" />
                 
                 {/* Floating Telemetry Card */}
                 <div className="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-neutral-900/90 backdrop-blur-md border border-neutral-800/80">

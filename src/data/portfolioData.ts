@@ -52,7 +52,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       { label: 'TPS Target', value: '20.0 Flat' },
       { label: 'Deploy Time', value: '24–72h' }
     ],
-    image: '/src/assets/images/minecraft_server_architecture_1794026322117.jpg',
+    image: '/assets/images/minecraft-server.jpg',
     pricingTab: 'mc'
   },
   {
@@ -76,7 +76,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       { label: 'Mobile Fidelity', value: '100%' },
       { label: 'Stack', value: 'React / TS' }
     ],
-    image: '/src/assets/images/custom_web_showcase_1794026323521.jpg',
+    image: '/assets/images/custom-web.jpg',
     pricingTab: 'website'
   },
   {
@@ -100,7 +100,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       { label: 'Security Level', value: 'Raid-Proof' },
       { label: 'API Version', value: 'Discord v14' }
     ],
-    image: '/src/assets/images/discord_bot_ecosystem_1794026322985.jpg',
+    image: '/assets/images/discord-bot.jpg',
     pricingTab: 'dc'
   },
   {
@@ -124,7 +124,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       { label: 'Code Quality', value: 'Strict Typed' },
       { label: 'Platforms', value: 'Web & Linux' }
     ],
-    image: '/src/assets/images/prorabbi_hero_visual_1794026322278.jpg',
+    image: '/assets/images/hero-workstation.jpg',
     pricingTab: 'website'
   }
 ];

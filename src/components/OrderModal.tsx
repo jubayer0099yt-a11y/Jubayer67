@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Check, Copy, Send, Sparkles, MessageSquare, ArrowRight } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 interface OrderModalProps {
   isOpen: boolean;
@@ -60,10 +61,11 @@ ${requirements || 'Ready to discuss on call/chat'}`;
         {!submitted ? (
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
+              <SafeImage
                 src="/assets/aistudio/39727-removebg-preview_bf8db067.png"
                 alt="JUBAYER"
                 className="w-12 h-12 rounded-full border-2 border-emerald-400 object-cover shadow-sm"
+                fallbackType="avatar"
               />
               <div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 uppercase tracking-wider">

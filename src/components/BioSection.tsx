@@ -1,5 +1,6 @@
 import { BIO_DATA } from '../data/portfolioData';
 import { Terminal, Shield, Cpu, Flame, ArrowUpRight } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 interface BioSectionProps {
   onOpenOrderModal: () => void;
@@ -30,10 +31,11 @@ export function BioSection({ onOpenOrderModal }: BioSectionProps) {
           <div className="lg:col-span-7 space-y-6">
             {/* Creator Author Bar */}
             <div className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900/80 border border-neutral-800">
-              <img
+              <SafeImage
                 src="/assets/aistudio/39727-removebg-preview_bf8db067.png"
                 alt="JUBAYER"
                 className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-emerald-400 object-cover shrink-0 shadow-lg"
+                fallbackType="avatar"
               />
               <div className="space-y-1">
                 <div className="flex items-center gap-2">

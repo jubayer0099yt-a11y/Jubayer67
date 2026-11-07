@@ -1,4 +1,5 @@
 import { ArrowUp } from 'lucide-react';
+import { SafeImage } from './SafeImage';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -14,10 +15,11 @@ export function Footer({ onNavigate }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img
+            <SafeImage
               src="/assets/aistudio/39727-removebg-preview_bf8db067.png"
               alt="JUBAYER"
               className="w-7 h-7 rounded-full border border-neutral-700 object-cover shrink-0"
+              fallbackType="avatar"
             />
             <span className="text-base font-bold text-white font-display">
               JUBAYER
